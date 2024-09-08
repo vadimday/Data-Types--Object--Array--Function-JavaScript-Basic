@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Витік води з бака</h2>
+    <p>Введіть початковий обсяг води:</p>
+    <input type="number" id="volume" />
+    <button onclick="calculateDays()">Розрахувати дні</button>
+    <p id="result"></p>
+
+    <script>
+      function calculateDays() {
+        let volume = parseFloat(document.getElementById("volume").value);
+        let days = 0;
+
+        while (volume > 10) {
+          volume -= volume * 0.1;
+          days++;
+        }
+
+        document.getElementById("result").innerHTML =
+          "Бак прослужить " + days + " днів до аварійної ситуації.";
+      }
+    </script>
+  </body>
+</html>
